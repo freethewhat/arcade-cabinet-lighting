@@ -9,8 +9,7 @@ void ButtonClass::init()
 
 }
 
-ButtonClass::ButtonClass(int pin)
-{
+void ButtonClass::setup(int pin, unsigned long debounceDelay) {
     pinMode(pin, INPUT);
     _pin = pin;
     _state;

@@ -20,7 +20,7 @@ protected:
 	bool _status;
 public:
 	void init();
-	ButtonClass(int pin);
+	void setup(int pin, unsigned long debounceDelay = 30);
 	bool isPressed();
 	bool getStatus();
 };
