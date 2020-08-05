@@ -19,7 +19,7 @@ class PirSensorClass
 	 unsigned long _motionStart;
  public:
 	void init();
-	void setup(int pin, int debounceTimeout = 30, long motionTimeout = 10000);
+	void setup(int pin, int debounceTimeout = 30, long motionTimeout = 10000); // TODO: Make motiontimeout measured in minutes.
 	bool motionDetected();
 	void update();
 };

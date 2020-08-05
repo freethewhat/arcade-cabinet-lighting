@@ -28,22 +28,17 @@ void setup() {
 // the loop function runs over and over again until power down or reset
 void loop() {
 	if (button.isPressed()) {
-		// TODO: toggle LED strip fading
-		
 		led.toggleFade();
-		Serial.println("fade status: " + String(led.getFadeStatus()));
 	}
 	
 	sensor.update();
 
 	if (sensor.motionDetected() && !systemOn) {
-		Serial.println("System On");
 		systemOn = !systemOn;
 		led.on();
 	}
 	else if (!sensor.motionDetected() && systemOn)
 	{
-		Serial.println("System Off");
 		systemOn = !systemOn;
 		led.off();
 	}
