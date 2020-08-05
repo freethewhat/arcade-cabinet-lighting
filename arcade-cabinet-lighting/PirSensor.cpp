@@ -27,6 +27,8 @@ void PirSensorClass::update()
 {
 	int reading = digitalRead(_pin);
 
+	// TODO: Add debouncing to prevent any false positives.
+
 	if (reading == HIGH) {
 		_motionDetected = true;
 		_motionStart = millis();
