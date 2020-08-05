@@ -4,6 +4,11 @@
 
 #include "LedStrip.h"
 
+/// <summary>
+/// Setup the led configuration.
+/// </summary>
+/// <param name="pin">Pin of the LED</param>
+/// <param name="fadeStatus">Status of the fade.</param>
 void LedStripClass::setup(int pin, bool fadeStatus)
 {
 	pinMode(pin, OUTPUT);
@@ -13,16 +18,27 @@ void LedStripClass::setup(int pin, bool fadeStatus)
 	m_ledBrightness = 0;
 }
 
+/// <summary>
+/// Get the status of the LED.
+/// </summary>
+/// <returns>Boolean</returns>
 bool LedStripClass::getLedStatus()
 {
 	return m_status;
 }
 
+/// <summary>
+/// Get the status of fading.
+/// </summary>
+/// <returns>Boolean</returns>
 bool LedStripClass::getFadeStatus()
 {
 	return m_fade;
 }
 
+/// <summary>
+/// Turn the LED on.
+/// </summary>
 void LedStripClass::on()
 {
 	m_status = true;
@@ -33,6 +49,9 @@ void LedStripClass::on()
 		digitalWrite(m_pin, HIGH);
 }
 
+/// <summary>
+/// Turn the LED off.
+/// </summary>
 void LedStripClass::off()
 {
 	m_status = false;
@@ -43,11 +62,17 @@ void LedStripClass::off()
 		digitalWrite(m_pin, LOW);
 }
 
+/// <summary>
+/// Toggle the fade status.
+/// </summary>
 void LedStripClass::toggleFade()
 {
 	m_fade = !m_fade;
 }
 
+/// <summary>
+/// Fade the LED on.
+/// </summary>
 void LedStripClass::fadeOn()
 {
 	if (m_ledBrightness < 255) {
@@ -59,6 +84,9 @@ void LedStripClass::fadeOn()
 	}
 }
 
+/// <summary>
+/// Fade the LED off.
+/// </summary>
 void LedStripClass::fadeOff()
 {
 	if (m_ledBrightness > 0) {
@@ -69,8 +97,6 @@ void LedStripClass::fadeOff()
 		}
 	}
 }
-
-
 
 LedStripClass LedStrip;
 
