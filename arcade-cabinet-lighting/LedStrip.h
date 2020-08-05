@@ -19,10 +19,26 @@ class LedStripClass
 	void off();
 	void toggleFade();
  protected:
+	 /// <summary>
+	 /// Pin of the LED.
+	 /// </summary>
 	 int m_pin;
+
+	 /// <summary>
+	 /// Status of the LED.
+	 /// </summary>
 	 bool m_status;
+
+	 /// <summary>
+	 /// Status of fading.
+	 /// </summary>
 	 bool m_fade;
+
+	 /// <summary>
+	 /// Brightness of the LED.
+	 /// </summary>
 	 int m_ledBrightness;
+
 	 void fadeOn();
 	 void fadeOff();
 
