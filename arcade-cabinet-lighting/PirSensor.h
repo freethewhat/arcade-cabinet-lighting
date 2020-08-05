@@ -15,11 +15,11 @@ class PirSensorClass
 	 int _pin;
 	 bool _motionDetected;
 	 int _debounceTimeout;
-	 int _motionTimeout;
+	 long _motionTimeout;
 	 unsigned long _motionStart;
  public:
 	void init();
-	PirSensorClass(int pin);
+	void setup(int pin, int debounceTimeout = 30, long motionTimeout = 10000);
 	bool motionDetected();
 	void update();
 };
