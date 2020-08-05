@@ -5,11 +5,13 @@
 */
 
 // the setup function runs once when you press reset or power the board
+#include "LedStrip.h"
 #include "PirSensor.h"
 #include "Button.h"
 
 ButtonClass button;
 PirSensorClass sensor;
+LedStripClass led;
 
 boolean systemOn = false;
 
@@ -20,13 +22,16 @@ void setup() {
 
 	button.setup(D2);
 	sensor.setup(D6);
+	led.setup(D5);
 }
 
 // the loop function runs over and over again until power down or reset
 void loop() {
 	if (button.isPressed()) {
 		// TODO: toggle LED strip fading
-		Serial.println("Button Pressed");
+		
+		led.toggleFade();
+		Serial.println("fade status: " + String(led.getFadeStatus()));
 	}
 	
 	sensor.update();
@@ -34,11 +39,13 @@ void loop() {
 	if (sensor.motionDetected() && !systemOn) {
 		Serial.println("System On");
 		systemOn = !systemOn;
+		led.on();
 	}
 	else if (!sensor.motionDetected() && systemOn)
 	{
 		Serial.println("System Off");
 		systemOn = !systemOn;
+		led.off();
 	}
 }
 
