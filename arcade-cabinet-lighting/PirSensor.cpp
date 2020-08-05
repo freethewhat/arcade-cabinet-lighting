@@ -11,6 +11,7 @@ void PirSensorClass::init()
 PirSensorClass::PirSensorClass(int pin)
 {
 	pinMode(pin, INPUT);
+	_motionDetected = false;
 	_pin = pin;
 	_debounceTimeout = 30;
 	_motionStart = 0;
