@@ -340,3 +340,5 @@ ASALocalRun/
 healthchecksdb
 
 arcade-cabinet-lighting/__vm/
+arcade-cabinet-lighting.vcxproj
+arcade-cabinet-lighting.vcxproj.filters

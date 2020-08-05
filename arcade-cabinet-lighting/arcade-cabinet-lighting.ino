@@ -1,7 +1,7 @@
 /*
  Name:		arcade_cabinet_lighting.ino
  Created:	8/4/2020 2:41:40 PM
- Author:	home
+ Author:	Matt Sutton
 */
 
 // the setup function runs once when you press reset or power the board
