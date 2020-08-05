@@ -4,11 +4,6 @@
 
 #include "LedStrip.h"
 
-void LedStripClass::init()
-{
-	m_ledBrightness = 0;
-}
-
 void LedStripClass::setup(int pin, bool fadeStatus)
 {
 	pinMode(pin, OUTPUT);

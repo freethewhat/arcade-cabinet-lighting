@@ -12,7 +12,6 @@
 class LedStripClass
 {
  public:
-	void init();
 	void setup(int pin, bool fade = false);
 	bool getLedStatus();
 	bool getFadeStatus();
