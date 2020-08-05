@@ -8,14 +8,14 @@ void PirSensorClass::init()
 {
 }
 
-PirSensorClass::PirSensorClass(int pin)
+void PirSensorClass::setup(int pin, int debounceTimeout, long motionTimeout)
 {
 	pinMode(pin, INPUT);
 	_motionDetected = false;
 	_pin = pin;
-	_debounceTimeout = 30;
+	_debounceTimeout = debounceTimeout;
 	_motionStart = 0;
-	_motionTimeout = 3000;
+	_motionTimeout = motionTimeout;
 }
 
 bool PirSensorClass::motionDetected()
