@@ -5,9 +5,11 @@
 */
 
 // the setup function runs once when you press reset or power the board
+#include "PirSensor.h"
 #include "Button.h"
 
 ButtonClass button(D2);
+PirSensorClass sensor(D6);
 
 // the setup function runs once when you press reset or power the board
 void setup() {
@@ -20,5 +22,12 @@ void loop() {
 	if (button.isPressed()) {
 		// TODO: toggle LED strip fading
 	}
+	
+	sensor.update();
+
+	if (sensor.motionDetected())
+		Serial.println("Motion Detected");
+	else if (!sensor.motionDetected())
+		Serial.println("Motion Not Detected");
 }
 
